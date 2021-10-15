@@ -15,15 +15,19 @@ if (require.main === module) {
   console.log("");
 
   // BENCHMARK HERE, and print the average runtime
-    const today = new Date();
-    const startTime = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds()
-    
+  
     const longInput = [];
 
-    for (let i = 0; i < 100; ++i) {
+    const startTime = new Date()
+
+    for (let i = 0; i < 10000; ++i) {
       longInput.push(Math.random());
+      selectionSort(longInput)
     }
 
+    const endTime = new Date()
+
+    console.log(endTime - startTime + 'ms')
     
 }
 
